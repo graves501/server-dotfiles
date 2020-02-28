@@ -5,14 +5,12 @@
 #     . ~/.bash_aliases
 # fi
 
+
 # Vim Mode
 set -o vi
 
 # Source: https://askubuntu.com/questions/87061/can-i-make-tab-auto-completion-case-insensitive-in-bash
 bind 'set completion-ignore-case on'
-
-alias ebash="vim ~/.bash_aliases"
-alias lbash="source ~/.bashrc"
 
 # Check if neovim is installed
 if type nvim > /dev/null 2>&1; then
@@ -24,11 +22,36 @@ else
   alias v="vim"
 fi
 
+# editing and loading config files {{{
+  alias ebash="vim ~/.bash_aliases"
+  alias lbash="source ~/.bashrc"
+# }}}
+
+# Directories {{{
+  REPOSITORIES="$HOME/Repositories"
+  DOTFILES="$HOME/.dotfiles"
+  DOWNLOADS="$HOME/Downloads"
+
+  alias ..="cd .."
+  alias ...="cd ../.."
+  alias ....="cd ../../../"
+
+  alias h="cd"
+  alias go="cd"
+  alias dow="cd $DOWNLOADS"
+  alias re="cd $REPOSITORIES"
+  alias dot="cd $DOTFILES"
+# }}}
+
+
+alias hgrep="history | grep"
+
 alias cp="cp -iv"          # confirm before overwriting something
 alias rm="rm -iv"          # confirm before removing
 alias mv="mv -iv"          # confirm before overwriting something
 alias mkdir="mkdir -p"     # Make sure that the parent directory also gets created if it doesn't exist
 
+alias psa="ps aux | grep -i"
 alias dsa="sudo docker ps -a"
 alias ltr="ll -tr"
 
@@ -115,3 +138,7 @@ function extract {
 function cheat(){
   command curl "cheat.sh/$1"
 }
+
+# Upload snippet to termbin
+# Example: cat example.txt | termbin
+alias termbin='nc termbin.com 9999 | xclip && xclip -o'
