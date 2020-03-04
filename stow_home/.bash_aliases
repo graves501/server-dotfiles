@@ -1,10 +1,8 @@
-# Make sure that your .bashrc contains these lines
-# to make sure these aliases get automatically sourced:
+# Make sure that your .bashrc contains these lines:
 
 # if [ -f ~/.bash_aliases ]; then
 #     . ~/.bash_aliases
 # fi
-
 
 # Vim Mode
 set -o vi
