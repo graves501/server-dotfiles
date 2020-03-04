@@ -2,7 +2,7 @@
 
 [![Managed with GNU Stow](https://img.shields.io/badge/Managed%20with-GNU%20Stow-red.svg)](https://www.gnu.org/software/stow/)
 
-Basic .vimrc and .bash_aliases for (Linux) servers
+Basic `.vimrc` and `.bash_aliases` for (Linux) servers
 
 ## Usage
 
