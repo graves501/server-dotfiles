@@ -51,7 +51,14 @@ alias mkdir="mkdir -p"     # Make sure that the parent directory also gets creat
 
 alias psa="ps aux | grep -i"
 alias dsa="sudo docker ps -a"
-alias ltr="ll -tr"
+
+# ls aliases {{{
+  alias ll="ls -alFh"
+  alias la="ls -A"
+  alias l="ls -CF"
+  alias lt="ls --tree"
+  alias ltr="ll -tr"
+# }}}
 
 alias listen="sudo netstat -tulpen | grep LISTEN"
 
@@ -59,7 +66,7 @@ alias listen="sudo netstat -tulpen | grep LISTEN"
   alias gis="git status"
   alias gip="git pull"
   alias gia="git add -A"
-  alias gif="git fetch"
+  alias gif="git fetch && git status"
   alias giff="git diff"
   alias gifft="git difftool"
   alias giffs="git diff --staged"
