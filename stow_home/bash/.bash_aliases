@@ -42,6 +42,7 @@ fi
 # }}}
 
 
+alias sesh="tmux attach-session"
 alias hgrep="history | grep"
 
 alias cp="cp -iv"          # confirm before overwriting something
