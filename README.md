@@ -12,6 +12,6 @@ If you're new to using `stow`, check out [this article](https://alexpearce.me/20
 
 ```bash
 $ git clone https://github.com/graves501/server-dotfiles ~/.dotfiles 
-$ cd ~/.dotfiles
+$ cd ~/.dotfiles/stow_home
 $ stow -t ~ [application name e.g. vim]
 ```
