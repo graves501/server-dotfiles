@@ -59,6 +59,7 @@ alias dsa="sudo docker ps -a"
   alias l="ls -CF"
   alias lt="ls --tree"
   alias ltr="ll -tr"
+  alias lg="ll | grep -i"
 # }}}
 
 alias listen="sudo netstat -tulpen | grep LISTEN"

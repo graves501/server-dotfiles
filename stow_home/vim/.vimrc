@@ -35,3 +35,6 @@ nmap <C-q> :q<CR>
 " Noah's suggestion because swap files are just a pain in the ...
 set noswapfile
 set nobackup
+
+" Return to last edit position when opening files (You want this!)
+au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
