@@ -12,7 +12,16 @@ Make sure to have `stow` installed.
 
 If you're new to using `stow`, check out [this article](https://alexpearce.me/2016/02/managing-dotfiles-with-stow/).
 
+For sourcing the `.bash_aliases` file, add this to the end of your `.bashrc`:
+
+```bash
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi
+```
+
 ### Enable configuration
+
 ```bash
 $ git clone https://github.com/graves501/server-dotfiles ~/.dotfiles 
 $ cd ~/.dotfiles/stow_home
@@ -22,6 +31,7 @@ $ stow -t ~ [application name e.g. vim]
 ### Delete configuration
 
 To remove the configuration of an application:
+
 ```bash
 $ cd ~/.dotfiles/stow_home
 $ stow -D [application name e.g. vim]

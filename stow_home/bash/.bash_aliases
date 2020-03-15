@@ -10,19 +10,27 @@ set -o vi
 # Source: https://askubuntu.com/questions/87061/can-i-make-tab-auto-completion-case-insensitive-in-bash
 bind 'set completion-ignore-case on'
 
-# Check if neovim is installed
-if type nvim > /dev/null 2>&1; then
-  alias vim="nvim"
-  alias vi="nvim"
-  alias v="nvim"
-else
-  alias vi="vim"
-  alias v="vim"
-fi
+# Check if neovim is installed {{{
+  if type nvim > /dev/null 2>&1; then
+    alias vim="nvim"
+    alias vi="nvim"
+    alias v="nvim"
+  else
+    alias vi="vim"
+    alias v="vim"
+  fi
+# }}}
 
 # editing and loading config files {{{
+  # bash
   alias ebash="vim ~/.bash_aliases"
   alias lbash="source ~/.bashrc"
+
+  # vim
+  alias evim="vim ~/.vimrc"
+
+  # tmux
+  alias etmux="vim ~/.tmux.conf"
 # }}}
 
 # Directories {{{
@@ -85,6 +93,7 @@ alias listen="sudo netstat -tulpen | grep LISTEN"
   alias gist="git stash -u"
   alias gistp="git stash pop"
   alias gippp="git stash -u && git pull && git stash pop"
+  alias ginfo="git config --local --list"
 
   alias tigs="tig stash"
 
