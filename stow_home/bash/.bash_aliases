@@ -49,17 +49,10 @@ bind 'set completion-ignore-case on'
   alias dot="cd $DOTFILES"
 # }}}
 
-
-alias sesh="tmux attach-session"
-alias hgrep="history | grep"
-
 alias cp="cp -iv"          # confirm before overwriting something
 alias rm="rm -iv"          # confirm before removing
 alias mv="mv -iv"          # confirm before overwriting something
 alias mkdir="mkdir -p"     # Make sure that the parent directory also gets created if it doesn't exist
-
-alias psa="ps aux | grep -i"
-alias dsa="sudo docker ps -a"
 
 # ls aliases {{{
   alias ll="ls -alFh"
@@ -70,7 +63,16 @@ alias dsa="sudo docker ps -a"
   alias lg="ll | grep -i"
 # }}}
 
-alias listen="sudo netstat -tulpen | grep LISTEN"
+# Misc {{{
+  alias sesh="tmux attach-session"
+  alias hgrep="history | grep"
+  alias psa="ps aux | grep -i"
+  alias dsa="sudo docker ps -a"
+  alias listen="sudo netstat -tulpen | grep LISTEN"
+  alias findall="find . -iname"
+  alias dirsize='du -sh'
+  alias diskusage='du -sh * | sort -h'
+# }}}
 
 # Git Aliases {{{
   alias gis="git status"
