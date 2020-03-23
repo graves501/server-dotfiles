@@ -63,4 +63,7 @@ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g
   " Map copy/paste
   map <leader>c "+y
   map <leader>v "+p
+
+  " Toggle line number and relative line number
+  nmap <leader><leader>n :set nu! rnu!<CR>
 " }}}
