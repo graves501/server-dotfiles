@@ -12,6 +12,10 @@ bind 'set completion-ignore-case on'
 
 # Check if neovim is installed {{{
   if type nvim > /dev/null 2>&1; then
+
+    # Set default editor for cronjob
+    # and other applications
+    export EDITOR=/usr/bin/nvim
     alias vim="nvim"
     alias vi="nvim"
     alias v="nvim"
@@ -160,3 +164,18 @@ function cheat(){
 # Upload snippet to termbin
 # Example: cat example.txt | termbin
 alias termbin='nc termbin.com 9999 | xclip && xclip -o'
+
+# Get information about command
+function wat(){
+  if [ $# -eq 0 ]; then
+    echo "Needs argument!"
+    return
+  fi
+
+  # Ignore error output
+  # if one of the functions is not built-in!
+  which $1 2> /dev/null
+  where $1 2> /dev/null
+  whereis $1 2> /dev/null
+  whatis $1 2> /dev/null
+}
