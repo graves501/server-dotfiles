@@ -72,6 +72,7 @@ alias mkdir="mkdir -p"     # Make sure that the parent directory also gets creat
   alias hgrep="history | grep"
   alias psa="ps aux | grep -i"
   alias dsa="sudo docker ps -a"
+  alias tulpen="sudo netstat -tulpen"
   alias listen="sudo netstat -tulpen | grep LISTEN"
   alias findall="find . -iname"
   alias dirsize='du -sh'
