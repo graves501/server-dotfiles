@@ -9,6 +9,9 @@ syntax on
 " Default colorscheme looks ugly in my terminal
 colorscheme ron
 
+" Enables filetype plugin
+filetype indent plugin on
+
 " Shows line number
 set nu
 
