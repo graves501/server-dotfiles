@@ -135,8 +135,7 @@ function extract {
         *.tar.bz2)   for file in "$@"; do tar xvjf "$file"; done;;
         *.tar.gz)    for file in "$@"; do tar xvzf "$file"; done;;
         *.tar.xz)    for file in "$@"; do tar xvJf "$file"; done;;
-        *.lzma)      for file in "$@"; do unlzma "$file"; done;;
-        *.bz2)       for file in "$@"; do bunzip2 "$file"; done;;
+        *.lzma)      for file in "$@"; do unlzma "$file"; done;; *.bz2)       for file in "$@"; do bunzip2 "$file"; done;;
         *.rar)       for file in "$@"; do unrar x -ad "$file"; done;;
         *.gz)        for file in "$@"; do gunzip "$file"; done;;
         *.tar)       for file in "$@"; do tar vvxf "$file"; done;;
@@ -175,8 +174,26 @@ function wat(){
 
   # Ignore error output
   # if one of the functions is not built-in!
+  echo "------"
+  echo "which:"
   which $1 2> /dev/null
-  where $1 2> /dev/null
+  echo "------"
+  echo ""
+
+  echo "------"
+  echo "whereis:"
   whereis $1 2> /dev/null
+  echo "------"
+  echo ""
+
+  echo "------"
+  echo "whatis:"
   whatis $1 2> /dev/null
+  echo "------"
+  echo ""
+
+  echo "------"
+  echo "where:"
+  where $1 2> /dev/null
+  echo "------"
 }
