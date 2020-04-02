@@ -98,8 +98,8 @@ alias mkdir="mkdir -p"     # Make sure that the parent directory also gets creat
   alias gusch="git push"
   alias gistl="git stash list"
   alias gist="git stash -u"
-  alias gistp="git stash pop"
-  alias gippp="git stash -u && git pull && git stash pop"
+  alias gistp="git stash apply"
+  alias gippp="git stash -u && git pull && git stash apply"
   alias ginfo="git config --local --list"
 
   alias tigs="tig stash"
