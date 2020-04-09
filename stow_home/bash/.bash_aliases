@@ -1,16 +1,20 @@
-# Make sure that your .bashrc contains these lines:
+# general settings {{{
 
-# if [ -f ~/.bash_aliases ]; then
-#     . ~/.bash_aliases
-# fi
+  # Make sure that your .bashrc contains these lines:
 
-# Vim Mode
-set -o vi
+  # if [ -f ~/.bash_aliases ]; then
+  #     . ~/.bash_aliases
+  # fi
 
-# Source: https://askubuntu.com/questions/87061/can-i-make-tab-auto-completion-case-insensitive-in-bash
-bind 'set completion-ignore-case on'
+  # Vim Mode
+  set -o vi
 
-# Check if neovim is installed {{{
+  # Source: https://askubuntu.com/questions/87061/can-i-make-tab-auto-completion-case-insensitive-in-bash
+  bind 'set completion-ignore-case on'
+#}}}
+
+# check if neovim is installed {{{
+
   if type nvim > /dev/null 2>&1; then
 
     # Set default editor for cronjob
@@ -37,7 +41,7 @@ bind 'set completion-ignore-case on'
   alias etmux="vim ~/.tmux.conf"
 # }}}
 
-# Directories {{{
+# directories {{{
   REPOSITORIES="$HOME/Repositories"
   DOTFILES="$HOME/.dotfiles"
   DOWNLOADS="$HOME/Downloads"
@@ -53,10 +57,12 @@ bind 'set completion-ignore-case on'
   alias dot="cd $DOTFILES"
 # }}}
 
-alias cp="cp -iv"          # confirm before overwriting something
-alias rm="rm -iv"          # confirm before removing
-alias mv="mv -iv"          # confirm before overwriting something
-alias mkdir="mkdir -p"     # Make sure that the parent directory also gets created if it doesn't exist
+# interactive file manipulation {{{
+  alias cp="cp -iv"          # confirm before overwriting something
+  alias rm="rm -iv"          # confirm before removing
+  alias mv="mv -iv"          # confirm before overwriting something
+  alias mkdir="mkdir -p"     # Make sure that the parent directory also gets created if it doesn't exist
+#}}}
 
 # ls aliases {{{
   alias ll="ls -alFh"
@@ -67,7 +73,7 @@ alias mkdir="mkdir -p"     # Make sure that the parent directory also gets creat
   alias lg="ll | grep -i"
 # }}}
 
-# Misc {{{
+# misc {{{
   alias sesh="tmux attach-session"
   alias hgrep="history | grep"
   alias psa="ps aux | grep -i"
@@ -79,7 +85,7 @@ alias mkdir="mkdir -p"     # Make sure that the parent directory also gets creat
   alias diskusage='du -sh * | sort -h'
 # }}}
 
-# Git Aliases {{{
+# git aliases {{{
   alias gis="git status"
   alias gip="git pull"
   alias gia="git add -A"
@@ -125,75 +131,77 @@ alias mkdir="mkdir -p"     # Make sure that the parent directory also gets creat
   }
 # }}}
 
-# Extract archive
-function extract {
-  if [ -z "$1" ]; then
-    echo "Usage: extract <path/file_name>.<zip|rar|bz2|gz|tar|tbz2|tgz|Z|7z|xz|ex|tar.bz2|tar.gz|tar.xz>"
-  else
-    if [ -f $1 ] ; then
-      case $1 in
-        *.tar.bz2)   for file in "$@"; do tar xvjf "$file"; done;;
-        *.tar.gz)    for file in "$@"; do tar xvzf "$file"; done;;
-        *.tar.xz)    for file in "$@"; do tar xvJf "$file"; done;;
-        *.lzma)      for file in "$@"; do unlzma "$file"; done;; *.bz2)       for file in "$@"; do bunzip2 "$file"; done;;
-        *.rar)       for file in "$@"; do unrar x -ad "$file"; done;;
-        *.gz)        for file in "$@"; do gunzip "$file"; done;;
-        *.tar)       for file in "$@"; do tar vvxf "$file"; done;;
-        *.tbz2)      for file in "$@"; do tar xvjf "$file"; done;;
-        *.tgz)       for file in "$@"; do tar xvzf "$file"; done;;
-        *.zip)       for file in "$@"; do unzip -d "${file%.*}" "$file"; done;;
-        *.Z)         for file in "$@"; do uncompress "${file%.*}" "$file"; done;;
-        *.7z)        for file in "$@"; do 7z x "${file%.*}" "$file"; done;;
-        *.xz)        for file in "$@"; do unxz "${file%.*}" "$file"; done;;
-        *.exe)       for file in "$@"; do cabextract "${file%.*}" "$file"; done;;
-        *)           echo "extract: '$1' - unknown archive method" ;;
-      esac
+# util functions {{{
+
+  # This alias gives you a TL;DR version of the man pages.
+  # Examples are also included!
+  # Usage: cheat commandname
+  function cheat(){
+    command curl "cheat.sh/$1"
+  }
+
+  function extract {
+    if [ -z "$1" ]; then
+      echo "Usage: extract <path/file_name>.<zip|rar|bz2|gz|tar|tbz2|tgz|Z|7z|xz|ex|tar.bz2|tar.gz|tar.xz>"
     else
-        echo "$1 - file does not exist"
+      if [ -f $1 ] ; then
+        case $1 in
+          *.tar.bz2)   for file in "$@"; do tar xvjf "$file"; done;;
+          *.tar.gz)    for file in "$@"; do tar xvzf "$file"; done;;
+          *.tar.xz)    for file in "$@"; do tar xvJf "$file"; done;;
+          *.lzma)      for file in "$@"; do unlzma "$file"; done;; *.bz2)       for file in "$@"; do bunzip2 "$file"; done;;
+          *.rar)       for file in "$@"; do unrar x -ad "$file"; done;;
+          *.gz)        for file in "$@"; do gunzip "$file"; done;;
+          *.tar)       for file in "$@"; do tar vvxf "$file"; done;;
+          *.tbz2)      for file in "$@"; do tar xvjf "$file"; done;;
+          *.tgz)       for file in "$@"; do tar xvzf "$file"; done;;
+          *.zip)       for file in "$@"; do unzip -d "${file%.*}" "$file"; done;;
+          *.Z)         for file in "$@"; do uncompress "${file%.*}" "$file"; done;;
+          *.7z)        for file in "$@"; do 7z x "${file%.*}" "$file"; done;;
+          *.xz)        for file in "$@"; do unxz "${file%.*}" "$file"; done;;
+          *.exe)       for file in "$@"; do cabextract "${file%.*}" "$file"; done;;
+          *)           echo "extract: '$1' - unknown archive method" ;;
+        esac
+      else
+          echo "$1 - file does not exist"
+      fi
     fi
-  fi
-}
+  }
 
-# This alias gives you a TL;DR version of the man pages.
-# Examples are also included!
-# Usage: cheat commandname
-function cheat(){
-  command curl "cheat.sh/$1"
-}
+  # Upload snippet to termbin
+  # Example: cat example.txt | termbin
+  alias termbin='nc termbin.com 9999 | xclip && xclip -o'
 
-# Upload snippet to termbin
-# Example: cat example.txt | termbin
-alias termbin='nc termbin.com 9999 | xclip && xclip -o'
+  # Get information about command
+  function wat(){
+    if [ $# -eq 0 ]; then
+      echo "Needs argument!"
+      return
+    fi
 
-# Get information about command
-function wat(){
-  if [ $# -eq 0 ]; then
-    echo "Needs argument!"
-    return
-  fi
+    # Ignore error output
+    # if one of the functions is not built-in!
+    echo "------"
+    echo "which:"
+    which $1 2> /dev/null
+    echo "------"
+    echo ""
 
-  # Ignore error output
-  # if one of the functions is not built-in!
-  echo "------"
-  echo "which:"
-  which $1 2> /dev/null
-  echo "------"
-  echo ""
+    echo "------"
+    echo "whereis:"
+    whereis $1 2> /dev/null
+    echo "------"
+    echo ""
 
-  echo "------"
-  echo "whereis:"
-  whereis $1 2> /dev/null
-  echo "------"
-  echo ""
+    echo "------"
+    echo "whatis:"
+    whatis $1 2> /dev/null
+    echo "------"
+    echo ""
 
-  echo "------"
-  echo "whatis:"
-  whatis $1 2> /dev/null
-  echo "------"
-  echo ""
-
-  echo "------"
-  echo "where:"
-  where $1 2> /dev/null
-  echo "------"
-}
+    echo "------"
+    echo "where:"
+    where $1 2> /dev/null
+    echo "------"
+  }
+#}}}

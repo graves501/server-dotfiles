@@ -1,46 +1,53 @@
-set nocompatible
+" General settings {{{
 
-" Sets <leader> to Space
-let mapleader =" "
-let localleader =" "
+  set nocompatible
 
-syntax on
+  " Sets <leader> to Space
+  let mapleader =" "
+  let localleader =" "
 
-" Default colorscheme looks ugly in my terminal
-colorscheme ron
+  syntax on
 
-" Enables filetype plugin
-filetype indent plugin on
+  " Default colorscheme looks ugly in my terminal
+  colorscheme ron
 
-" Shows line number
-set nu
+  " Enables filetype plugin
+  filetype indent plugin on
 
-" Set relative number
-set rnu
+  " Shows line number
+  set nu
 
-" Set ignorecase search
-set ignorecase
+  " Set relative number
+  set rnu
 
-" When searching try to be smart about cases
-set smartcase
+  " Set ignorecase search
+  set ignorecase
 
-" Set highlight search result
-set hlsearch
+  " When searching try to be smart about cases
+  set smartcase
 
-" Makes search act like search in modern browsers
-set incsearch
+  " Set highlight search result
+  set hlsearch
 
-" Highlight the current cursorline
-set cursorline
+  " Makes search act like search in modern browsers
+  set incsearch
 
-" Noah's suggestion because swap files are just a pain in the ...
-set noswapfile
-set nobackup
+  " Highlight the current cursorline
+  set cursorline
 
-" Return to last edit position when opening files (You want this!)
-au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+  " Noah's suggestion because swap files are just a pain in the ...
+  set noswapfile
+  set nobackup
 
-" Define tabs as spaces {{{
+  " Folding
+  set nofoldenable
+  set foldmethod=marker
+
+  " Return to last edit position when opening files (You want this!)
+  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+"}}}
+
+" Tabs and spaces settings {{{
 
   " Source: https://stackoverflow.com/questions/1878974/redefine-tab-as-4-spaces
 
