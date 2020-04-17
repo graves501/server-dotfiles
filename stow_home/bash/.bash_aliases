@@ -6,6 +6,10 @@
   #     . ~/.bash_aliases
   # fi
 
+  # Set keyboard layout to US layout with German special characters
+  # Also maps caps lock to escape
+  setxkbmap -layout de -variant us -option caps:escape
+
   # Vim Mode
   set -o vi
 
