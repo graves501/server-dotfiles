@@ -91,6 +91,13 @@
 
   " Replace function
   nnoremap <leader><leader>r :%s//gc<Left><Left><Left>
+
+  "Switch buffers
+  noremap <Tab> :bnext<CR>
+  noremap <S-Tab> :bprevious<CR>
+
+  " Closes buffer
+  noremap <Leader><Tab> :bd<CR>
 " }}}
 
 " netrw {{{
@@ -110,24 +117,6 @@
   " " - <CR>/v/t to open in an h-split/v-split/tab
   " " - check |netrw-browse-maps| for more mappings
 
-  " Toggle Vexplore with Ctrl-E
-  function! ToggleVExplorer()
-    if exists("t:expl_buf_num")
-        let expl_win_num = bufwinnr(t:expl_buf_num)
-        if expl_win_num != -1
-            let cur_win_nr = winnr()
-            exec expl_win_num . 'wincmd w'
-            close
-            exec cur_win_nr . 'wincmd w'
-            unlet t:expl_buf_num
-        else
-            unlet t:expl_buf_num
-        endif
-    else
-        exec '1wincmd w'
-        Vexplore
-        let t:expl_buf_num = bufnr("%")
-    endif
-  endfunction
-  map <silent> <leader><F2> :call ToggleVExplorer()<CR>
+  " Opens file explorer to the left
+  map <silent> <leader><F2> :Lexplore<CR>
 " }}}
