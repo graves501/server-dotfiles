@@ -52,6 +52,9 @@
   " Autocompletion
   set wildmode=longest,list,full
 
+  " Set horizontal column guide
+  set colorcolumn=100
+
   " Easier splitmanagement
   nnoremap <C-J> <C-W><C-J>
   nnoremap <C-K> <C-W><C-K>
