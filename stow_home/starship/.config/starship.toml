@@ -3,9 +3,15 @@ add_newline = false
 
 [username]
 show_always = true
+style_user="bold purple"
 
 [hostname]
 ssh_only = false
+style="bold purple"
+prefix="["
+suffix="]"
 
 [character]
-symbol = "(๑˘︶˘๑) なに "
+symbol = "(๑˘︶˘๑) なに"
+style_success="bold white"
+style_error="bold red"
