@@ -1,0 +1,11 @@
+# Don't print a new line at the start of the prompt
+add_newline = false
+
+[username]
+show_always = true
+
+[hostname]
+ssh_only = false
+
+[character]
+symbol = "(๑˘︶˘๑) なに "
