@@ -12,6 +12,7 @@ prefix="["
 suffix="]"
 
 [character]
-symbol = "(๑˘︶˘๑) なに"
+symbol = "(๑˘︶˘๑)ノなに"
+vicmd_symbol = "(ノಠ益ಠ)ノなに"
 style_success="bold white"
-style_error="bold red"
+style_failure="bold blue"
