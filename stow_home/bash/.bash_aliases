@@ -211,6 +211,11 @@
     echo "where:"
     where $1 2> /dev/null
     echo "------"
+
+    echo "------"
+    echo "alias:"
+    alias $1 2> /dev/null
+    echo "------"
   }
 #}}}
 
