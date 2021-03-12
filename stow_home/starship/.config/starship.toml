@@ -1,18 +1,35 @@
+# Documentation:
+# https://starship.rs/config/
+# https://starship.rs/advanced-config/#style-strings
+
 # Don't print a new line at the start of the prompt
 add_newline = false
+# use_symbol_for_status = true
 
 [username]
 show_always = true
-style_user="bold purple"
+style_user="bold #ff79c6"
+format = "[$user]($style)🔥💀🔥"
 
 [hostname]
 ssh_only = false
-style="bold purple"
-prefix="["
-suffix="]"
+style="bold #8be9fd"
+format = "[$hostname]($style) "
 
 [character]
-symbol = "(๑˘︶˘๑)ノなに"
-vicmd_symbol = "(ノಠ益ಠ)ノなに"
-style_success="bold white"
-style_failure="bold blue"
+success_symbol = "[😂🤔なに!?](bold white)"
+error_symbol = "[😂🤔なに!?](bold red)"
+vicmd_symbol = "[😂🤔なに!?](bold green)"
+
+[directory]
+style = "bold #bd93f9"
+truncation_length = 5
+truncate_to_repo = false
+
+[git_branch]
+style = "bold #50fa7b"
+symbol = "🌱 "
+
+[git_status]
+style = "bold #ff5555"
+
