@@ -221,4 +221,4 @@
 
 # If starship is installed
 # Install: curl -fsSL https://starship.rs/install.sh | bash
-# eval "$(starship init bash)"
+eval "$(starship init bash)"

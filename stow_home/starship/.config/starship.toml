@@ -17,9 +17,9 @@ style="bold #8be9fd"
 format = "[$hostname]($style) "
 
 [character]
-success_symbol = "[😂🤔なに!?](bold white)"
-error_symbol = "[😂🤔なに!?](bold red)"
-vicmd_symbol = "[😂🤔なに!?](bold green)"
+success_symbol = '[\(๑˘︶˘๑\)ノなに!?](bold #f8f8f2)'
+error_symbol = '[\(ノಠ益ಠ\)ノなに!?](bold #ff5555)'
+vicmd_symbol = '[\(๑˘︶˘๑\)ノなに!?](bold #6272a4)'
 
 [directory]
 style = "bold #bd93f9"
@@ -32,4 +32,3 @@ symbol = "🌱 "
 
 [git_status]
 style = "bold #ff5555"
-
