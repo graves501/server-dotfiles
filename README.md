@@ -23,9 +23,9 @@ fi
 ### Enable configuration
 
 ```bash
-$ git clone https://github.com/graves501/server-dotfiles ~/.dotfiles 
+$ git clone https://github.com/graves501/server-dotfiles ~/.dotfiles
 $ cd ~/.dotfiles/stow_home
-$ stow -t ~ [application name e.g. vim]
+$ stow -vt ~ [application name e.g. vim]
 ```
 
 ### Delete configuration
