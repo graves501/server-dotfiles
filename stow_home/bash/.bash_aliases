@@ -219,6 +219,38 @@
   }
 #}}}
 
-# If starship is installed
+# yay {{{
+  # Search for package
+  function yss(){
+    if [ $# -eq 0 ]; then
+      echo "yss <searchterm>"
+      return
+    fi
+    command yay -Ss "${@}"
+  }
+
+  # Install package
+  function yas(){
+    if [ $# -eq 0 ]; then
+      echo "yas <packagename>"
+      return
+    fi
+    command yay -S "${@}"
+  }
+
+  # Remove package
+  function yar(){
+    if [ $# -eq 0 ]; then
+      echo "yar <packagename>"
+      return
+    fi
+    command yay -Rsn "${@}"
+  }
+# }}}
+
+# Enable starship if installed
 # Install: curl -fsSL https://starship.rs/install.sh | bash
-eval "$(starship init bash)"
+if type starship > /dev/null 2>&1; then
+  eval "$(starship init bash)"
+fi
+
