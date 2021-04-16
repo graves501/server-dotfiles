@@ -128,6 +128,8 @@
     command tig --author="$author"
   }
 
+  alias gicc="git commit"
+
   function gic(){
     if [ $# -eq 0 ]; then
       echo "gic <commitmessage>"
@@ -147,6 +149,9 @@
   function cheat(){
     command curl "cheat.sh/$1"
   }
+
+  alias myip="curl ipinfo.io"
+  alias myinterface="echo $(ip route get 1.1.1.1 | awk -- '{printf $5}')"
 
   function extract {
     if [ -z "$1" ]; then
@@ -246,6 +251,11 @@
     fi
     command yay -Rsn "${@}"
   }
+
+  alias mj="yay -Syyu --sudoloop"
+  alias mjc="yes | yay -Yc && yes | yay -Sc"
+  alias mqs="pacman -Qs"
+  alias mqi="pacman -Qi"
 # }}}
 
 # Enable starship if installed
@@ -253,4 +263,3 @@
 if type starship > /dev/null 2>&1; then
   eval "$(starship init bash)"
 fi
-
