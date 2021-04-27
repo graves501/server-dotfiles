@@ -87,6 +87,7 @@
   alias findall="find . -iname"
   alias dirsize='du -sh'
   alias diskusage='du -sh * | sort -h'
+  alias rsync-cp="rsync -azvhP"
 
   # Keyboard layouts for graphical environment
   alias kb-us="setxkbmap -layout de -variant us -option caps:escape"
