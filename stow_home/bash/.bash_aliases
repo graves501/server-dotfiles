@@ -259,6 +259,7 @@
   alias mqi="pacman -Qi"
 # }}}
 
+
 # Enable zoxide if installed
 # Install: curl -sS https://webinstall.dev/zoxide | bash
 if type zoxide > /dev/null 2>&1; then
@@ -270,3 +271,8 @@ fi
 if type starship > /dev/null 2>&1; then
   eval "$(starship init bash)"
 fi
+
+# Enable fzf if installed
+# git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+# ~/.fzf/install
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
