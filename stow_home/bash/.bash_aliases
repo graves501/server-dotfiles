@@ -259,6 +259,12 @@
   alias mqi="pacman -Qi"
 # }}}
 
+# Enable zoxide if installed
+# Install: curl -sS https://webinstall.dev/zoxide | bash
+if type zoxide > /dev/null 2>&1; then
+  eval "$(zoxide init bash)"
+fi
+
 # Enable starship if installed
 # Install: curl -fsSL https://starship.rs/install.sh | bash
 if type starship > /dev/null 2>&1; then
