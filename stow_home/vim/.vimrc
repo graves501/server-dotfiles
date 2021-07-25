@@ -9,7 +9,8 @@
   syntax on
 
   " Default colorscheme looks ugly in my terminal
-  colorscheme ron
+  " colorscheme ron
+  colorscheme dracula
 
   " Enables filetype plugin
   filetype indent plugin on
