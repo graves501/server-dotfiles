@@ -28,6 +28,7 @@
     alias vi="nvim"
     alias v="nvim"
   else
+    export EDITOR=/usr/bin/vim
     alias vi="vim"
     alias v="vim"
   fi
