@@ -79,7 +79,8 @@
 # }}}
 
 # misc {{{
-  alias sesh="tmux attach-session"
+  alias sesh="tmux attach"
+  alias ta="tmux attach"
   alias hgrep="history | grep"
   alias psa="ps aux | grep -i"
   alias dsa="sudo docker ps -a"
