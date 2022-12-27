@@ -61,6 +61,9 @@
   nnoremap <C-K> <C-W><C-K>
   nnoremap <C-L> <C-W><C-L>
   nnoremap <C-H> <C-W><C-H>
+
+  " Run: set list to enable these characters, set list! to disable
+  set listchars=tab:>-,space:·,nbsp:␣,trail:•,eol:↲,precedes:«,extends:»,conceal:┊
 "}}}
 
 " Tabs and spaces settings {{{
