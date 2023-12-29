@@ -38,4 +38,5 @@ style = "bold #ff5555"
 
 [time]
 disabled = false
-format = '[\[ $time \]](bold #ffb86c) '
+time_format = "%a %d-%m-%Y %H:%M:%S"
+format = '[\[$time\]](bold #ffb86c) '
