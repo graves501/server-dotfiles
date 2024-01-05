@@ -263,13 +263,13 @@
 
 
 # Enable zoxide if installed
-# Install: curl -sS https://webinstall.dev/zoxide | bash
+# Install: curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | bash
 if type zoxide > /dev/null 2>&1; then
   eval "$(zoxide init bash)"
 fi
 
 # Enable starship if installed
-# Install: curl -fsSL https://starship.rs/install.sh | bash
+# Install: curl -sS https://starship.rs/install.sh | sh
 if type starship > /dev/null 2>&1; then
   eval "$(starship init bash)"
 fi
