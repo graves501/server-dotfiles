@@ -74,7 +74,7 @@
   alias la="ls -A"
   alias l="ls -CF"
   alias lt="ls --tree"
-  alias ltr="ll -tr"
+  alias ltr="ll -trh"
   alias lg="ll | grep -i"
 # }}}
 
@@ -94,6 +94,12 @@
   # Keyboard layouts for graphical environment
   alias kb-us="setxkbmap -layout de -variant us -option caps:escape"
   alias kb-de="setxkbmap -layout de -option caps:escape"
+
+  # Non-robust version of OMZ's take
+  function take() {
+    mkdir -p "$1"
+    cd "$1"
+  }
 # }}}
 
 # git aliases {{{
