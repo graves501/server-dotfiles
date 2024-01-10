@@ -91,6 +91,11 @@
   alias diskusage='du -sh * | sort -h'
   alias rsync-cp="rsync -azvhP"
 
+  alias tree1="tree -L 1"
+  alias tree2="tree -L 2"
+  alias tree3="tree -L 3"
+  alias dtree="tree -d"
+
   # Keyboard layouts for graphical environment
   alias kb-us="setxkbmap -layout de -variant us -option caps:escape"
   alias kb-de="setxkbmap -layout de -option caps:escape"
