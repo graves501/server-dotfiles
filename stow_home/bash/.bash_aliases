@@ -92,6 +92,26 @@
   alias rsync-cp="rsync -azvhP"
 
   alias lad="lazydocker"
+  alias dup="docker-compose up -d"
+  alias dre="docker-compose restart"
+
+  # List hidden files
+  alias rgh="rg --hidden --no-ignore -i"
+
+  # List only files that contain a pattern
+  alias rgf="rg --hidden -i -l"
+
+  # List files matching a pattern
+  alias rgfiles="rg --files | rg"
+
+  # Case-insensitive search for pattern including hidden files
+  alias rg="rg --hidden -i"
+
+  # fd
+  alias fdi="fd -i"
+  alias fdd="fd -i --type directory"
+  alias fdh="fd -i --hidden --no-ignore"
+
   alias htop="btop"
 
   alias tree1="tree -L 1"
