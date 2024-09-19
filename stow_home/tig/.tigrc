@@ -1,0 +1,80 @@
+# Example config at: https://github.com/jonas/tig/blob/master/tigrc
+
+# Inspired by: https://github.com/nesono/nesono-bin/blob/master/tigrc
+
+# some general options {{{
+  set mouse = true
+  set line-graphics = utf-8
+  set wrap-lines = yes
+# }}}
+
+# disable defaults {{{
+  bind generic <Space> none
+  bind generic C none
+  bind generic g none
+  bind generic H none
+  bind generic l none
+  bind generic m none
+  bind generic P none
+  bind generic S none
+  bind generic t none
+  # bind generic w none
+  bind generic y none
+  bind generic | none
+
+  bind main ! none
+  bind main - none
+  bind main G none
+  bind main H none
+
+  bind refs ! none
+  bind refs b none
+  # bind refs C none
+  bind refs d none
+  bind refs u none
+
+  # Needed for staging/unstaging stuff
+  # bind status u none
+# }}}
+
+# Custom settings {{{
+  bind generic l enter
+  bind generic L view-log
+  bind generic b view-blame
+  bind generic gg move-first-line
+  bind generic G move-last-line
+
+  bind main G move-last-line
+
+  # Horizontal split settings when looking at a commit
+  # set vertical-split = horizontal
+  # set split-view-height = 85%
+
+  # Vertical split settings when looking at a commit
+  set split-view-width = 70%
+
+  # Cursor navigation
+  bind generic	j	move-down
+  bind generic	k	move-up
+  bind generic	<C-D>	move-half-page-down
+  bind generic	<C-U>	move-half-page-up
+
+  # Searching
+  bind generic	/	search
+  bind generic	?	search-back
+  bind generic	n	find-next
+  bind generic	N	find-prev
+
+  # reload ~/.tigrc
+  bind generic S :source ~/.tigrc
+
+  # Cursor
+  # textcolor backgroundcolor
+  color cursor black blue
+
+  # Commit id in diff view
+  #                 textcolor backgroundcolor
+  color title-blur  black     magenta
+  color title-focus black     magenta
+# }}}
+
