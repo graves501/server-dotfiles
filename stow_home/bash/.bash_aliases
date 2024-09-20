@@ -55,8 +55,6 @@
   alias ...="cd ../.."
   alias ....="cd ../../../"
 
-  alias h="cd"
-  alias go="cd"
   alias dow="cd $DOWNLOADS"
   alias re="cd $REPOSITORIES"
   alias dot="cd $DOTFILES"
@@ -112,7 +110,9 @@
   alias fdd="fd -i --type directory"
   alias fdh="fd -i --hidden --no-ignore"
 
-  alias htop="btop"
+  if type btop > /dev/null 2>&1; then
+    alias htop="btop"
+  fi
 
   alias tree1="tree -L 1"
   alias tree2="tree -L 2"
