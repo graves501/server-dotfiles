@@ -101,7 +101,7 @@
   " Replace function
   nnoremap <leader><leader>r :%s//gc<Left><Left><Left>
 
-  "Switch buffers
+  " Switch buffers
   noremap <Tab> :bnext<CR>
   noremap <S-Tab> :bprevious<CR>
 
@@ -111,7 +111,7 @@
 
 " netrw {{{
 
-  " " Tweaks for browsing
+  " Tweaks for browsing
   let g:netrw_banner=0        " disable annoying banner
   let g:netrw_browse_split=4  " open in prior window
   let g:netrw_altv=1          " open splits to the right
@@ -121,11 +121,25 @@
   let g:netrw_preview=1 " open previews vertically
   let g:netrw_winsize = 25
 
-  " " NOW WE CAN:
-  " " - :edit a folder to open a file browser
-  " " - <CR>/v/t to open in an h-split/v-split/tab
-  " " - check |netrw-browse-maps| for more mappings
+  " NOW WE CAN:
+  " - :edit a folder to open a file browser
+  " - <CR>/v/t to open in an h-split/v-split/tab
+  " - check |netrw-browse-maps| for more mappings
 
   " Opens file explorer to the left
-  map <silent> <leader><F2> :Lexplore<CR>
+  map <silent> <F2> :Lexplore<CR>
+
+" }}}
+
+" Window management {{{
+
+  " make the window bigger vertically
+  nnoremap = :vertical resize +5<cr>
+  " make the window smaller vertically
+  nnoremap - :vertical resize -5<cr>
+  " make the window bigger horizontally by pressing shift and =
+  nnoremap + :horizontal resize +2<cr>
+  " make the window smaller horizontally by pressing shift and -
+  nnoremap _ :horizontal resize -2<cr>
+
 " }}}
