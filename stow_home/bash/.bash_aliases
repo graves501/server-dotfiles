@@ -90,8 +90,8 @@
   alias rsync-cp="rsync -azvhP"
 
   alias lad="lazydocker"
-  alias dup="docker-compose up -d"
-  alias dre="docker-compose restart"
+  alias dup="docker compose up -d"
+  alias dre="docker compose restart"
 
   # List hidden files
   alias rgh="rg --hidden --no-ignore -i"
