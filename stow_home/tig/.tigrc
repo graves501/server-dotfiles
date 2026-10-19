@@ -68,13 +68,18 @@
   # reload ~/.tigrc
   bind generic S :source ~/.tigrc
 
+  ### Colors ###
+
+  # See 'man 5 tigrc' for more infos
+  # color textcolor backgroundcolor
+
   # Cursor
-  # textcolor backgroundcolor
+  # The cursor line for the current view.
   color cursor black blue
+  # The cursor line of any backgrounded view.
+  color cursor-blur black blue
 
   # Commit id in diff view
-  #                 textcolor backgroundcolor
   color title-blur  black     magenta
   color title-focus black     magenta
 # }}}
-
