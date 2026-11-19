@@ -296,12 +296,6 @@
 # }}}
 
 
-# Enable zoxide if installed
-# Install: curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | bash
-if type zoxide > /dev/null 2>&1; then
-  eval "$(zoxide init bash)"
-fi
-
 # Enable starship if installed
 # Install: curl -sS https://starship.rs/install.sh | sh
 if type starship > /dev/null 2>&1; then
@@ -312,3 +306,9 @@ fi
 # git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 # ~/.fzf/install
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+# Enable zoxide if installed
+# Install: curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | bash
+if type zoxide > /dev/null 2>&1; then
+  eval "$(zoxide init bash)"
+fi
